@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+	<title>Examen 15/04</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Badri Rusadze">
+    <meta name="description" content="Examen">	
+</head>
+<body>
+	<header>
+		<img src="Logos_SOC_2017.jpg" alt="Logo del SOC" width="700">
+
+		<h1>World Wide Web</h1>
+
+		<nav>
+			<h3>ÍNDEX:</h3>
+
+			<ol>
+				<li><a href="#deficinion">Definició</a></li>
+				<li><a href="#funcionamiento">Funcionament</a>
+					<ul>
+						<li><a href="#enlances">2.1. Enllaços web</a></li>
+						<li><a href="#actualizacio">2.2. Actualització dinàmica de pàgines web</a></li>
+						<li><a href="#prefwww">2.3. El prefix www</a></li>
+					</ul>
+				</li>
+				<li><a href="#cercaralweb">Cercar al web</a></li>
+				<li><a href="#webstandarts">Estàndards Web</a></li>
+			</ol>
+		</nav>
+	</header>	
+
+
+	<!-- MAIN -->
+	<main>
+		<section>
+			<h2 id="deficinion">1. Definició</h2>
+
+			<p>
+				El <strong>WWW</strong> (Acrònim Anglès de <strong>World Wide Web,</strong> <em>Teranyina d'abast mundial</em>) o <strong>web</strong> és una xarxa de pàgines
+				escrites en hipertext mitjançant el llenguatge de marcatge HTML i connectades entre si mitjançant vincles,
+				de manera que formin un sol cos de coneixement pel qual es pot navegar fàcilment. Per accedir-hi és indispensable
+				un navegador web. Va ser creada per Tim Berners-Lee quan treballava al CERN de Ginebra, Suïssa.
+				Ell mateix dirigeix el W3C, l'organisme encarregat de mantenir-ne el funcionament.
+			</p>
+
+			<p>
+				El web es basa en tres estàndards per funcionar: l'Uniform Resource Locator (URL), que s'encarrega de donar
+				una adreça única per tal de localitzar cada pàgina; l<em>'Hyper Text Transfer Protocol</em> (HTTP), que especifica
+				la manera com s'enviarà i es rebrà la informació entre el navegador i el servidor; i l'Hyper Text Markup Language
+				(HTML), un mètode per especificar com s'ha de veure aquesta informació al navegador. Acompanyen
+				a l'HTML el CSS, per definir aspectes de disseny. O el JavaScript per fer petites programacions dins la pàgina
+				web. També s'ha posat de moda per a jocs i webs amb molts efectes visuals, el Flash d'Adobe.
+			</p>
+
+			<table border="1">
+				<tr>
+					<td>
+						<img src="640px-WorldWideWebAroundWikipedia.png" width="450" alt="Wikipedia WWW">
+					</td>
+				</tr>
+				<tr>
+					<td><em>Representació gràfica del World Wide Web al voltant de la Viquipèdia</em></td>
+				</tr>
+			</table>
+			
+			<p>
+				En català, quan es parla de "web" en masculí es fa referència al sistema web o bé a un lloc web, però quan
+				es parla de "web" en femení es fa referència a només una de les pàgines web del sistema.
+			</p>
+		</section>
+
+		<section>
+
+			<h2 id="funcionamiento">2. Funcionament</h2>
+
+			<p>Tot i que avui dia els termes Internet i World Wide Web són d'ús freqüent en la parla quotidiana com a sinònims,
+			no són la mateixa cosa. Internet és un sistema global xarxes d'ordinadors interconnectats. Per contra,
+			el Web és un dels serveis que s'executa sobre la xarxa d'Internet. És una col·lecció de documents interconnectats
+			i d'altres recursos, units per hipervincles i adreces Uniform Resource Locator. En resum, el Web és
+			un programari que funciona sobre Internet.
+			</p>
+
+			<p>
+				La visualització d'una pàgina web normalment comença quan l'usuari introdueix a través del teclat un URL al
+				navegador web o bé quan segueix un hiperenllaç vers aquella pàgina o recurs. A continuació el navegador
+				web inicia una sèrie de processos intercanviant missatges no visibles per tal d'aconseguir la pàgina i mostrar-
+				la. En primer lloc, la part de l'URL que conté el nom del servidor que conté la pàgina del servidor es tradueix
+				a una adreça IP mitjançant la utilització d'una base de dades distribuïda globalment que conté les
+				equivalències domini - adreça IP i que rep el nom de DNS. Aquesta adreça IP és necessària per a poder contactar
+				amb el servidor al qual s'ha d'enviar la consulta. Després el navegador web demana el recurs enviant
+				una petició HTTP al servidor web. En el cas d'una pàgina web típica es demana el text HTML de la pàgina i
+				aquest és interpretat immediatament pel navegador en un procés d'anàlisi (parsing en anglès) i a continuació,
+				quan el navegador ja sap quins recursos addicionals necessitarà per mostrar la pàgina sencera, torna a
+				fer una consulta HTTP demanant les imatges i altres recursos que formin part de la pàgina (arxius css, javascript,
+				applets java, etc.). Les estadístiques que mesuren la popularitat d'un lloc web es basen en general en
+				el nombre de pàgines visitades o peticions de fitxers (hits en anglès) que es fan a un servidor web.
+			</p>
+
+			<h3 id="enlances">2.1 Enllaços web</h3>
+
+			<p>
+				Amb el temps, molts dels recursos web als quals apunten els hipervincles o enllaços desapareixen, canvien
+				de lloc o són substituïts per continguts diferents. Això provoca l'obsolescència dels enllaços, un fenomen
+				que es coneix com enllaços trencats. La naturalesa efímera de les pàgines web ha comportat molts esforços
+				per a arxivar els llocs web. L'Internet Archive o Arxiu d'Internet, en actiu des de 1996, és un dels projectes
+				més coneguts dedicats a la conservació de continguts digitals a Internet.
+			</p>
+
+			<h3 id="actualizacio">2.2 Actualització dinàmica de pàgines web</h3>
+
+			<p>
+				JavaScript és un llenguatge script que va ser desenvolupat en primera instància el 1995 per Brendan Eich i
+				després per Netscape i que és utilitzat en les pàgines web.[21] La seva versió estandarditzada és el llenguatge
+				ECMAScript.[21] Per tal de superar algunes de les limitacions del model de pàgines descrit més
+				amunt, algunes aplicacions web també utilitzen Ajax (Asynchronous Javascript And Xml o JavaScript i XML
+				asíncrons). El codi JavaScript es lliura amb la pàgina i permet fer més peticions HTTP al servidor, ja sigui en
+				resposta a accions de l'usuari, com clics del ratolí o basant-se en un lapse de temps. Les respostes del servidor
+				s'utilitzen per modificar la pàgina actual en comptes de crear una nova pàgina amb cada resposta. D'aquesta
+				manera el servidor només ha de proporcionar una quantitat limitada d'informació i de manera gradual.
+				Atès que és possible gestionar múltiples peticions Ajax al mateix temps, els usuaris poden interaccionar
+				amb una pàgina, fins i tot mentre s'estiguin rebent dades. Algunes aplicacions web sondegen de manera
+				regular el servidor (polling) per preguntar si hi ha nova informació disponible.
+			</p>
+
+			<h3 id="prefwww">2.3 El prefix www</h3>
+
+			<p>
+				Molts noms de domini utilitzats a la xarxa World Wide Web comencen amb www a causa de la pràctica habitual
+				d'anomenar els servidors d'Internet segons els serveis que proporcionen. El nom de host per a un servidor
+				web és sovint www, de la mateixa manera que pot ser ftp per a servidor FTP o news o nntp per a un
+				servidor de notícies Usenet. Aquests noms de host apareixen com un subdomini dins del sistema de noms
+				DNS, per exemple <a href="https://www.exemple.cat/"> www.exemple.cat </a>. La utilització de "www" com a nom del subdomini no és obligatòria,
+				no hi ha cap norma tècnica o política que ho indiqui, i de fet, el primer servidor web va ser anomenar
+				nxoc01.cern.ch, i hi ha molts llocs web que no l'utilitzen. Tanmateix molts llocs web utilitzen el prefix "www"
+				o d'altres noms alternatius com per exemple el subdomini www2, secure, etc. Molts servidors web estan
+				configurats de tal manera que tant el domini arrel (<a href="https://www.exemple.cat/">exemple.cat</a> ) com el subdomini "www (www.exemple.
+				cat) es refereixen al mateix lloc, mentre que d'altres requereixen una de les dues formes de manera específica
+				o poden referir-se a diferents llocs web.
+			</p>
+
+			<p>
+				El protocol HTTP és fonamental per al funcionament de la xarxa World Wide Web, i el xifrat HTTPS (Hypertext
+				Transfer Protocol sobre Secure Socket Layer) afegeix una capa essencial perquè la informació confidencial,
+				com les contrasenyes o la informació bancària, s'intercanviï de manera segura a través d'Internet (que
+				és una xarxa pública). navegadors web també acostumen a anteposar aquesta informació a les adreces URL
+				si s'omet
+			</p>
+			
+		</section>
+		
+		<section>
+
+			<h2 id="cercaralweb">3. Cercar al web</h2>
+
+			<p>
+				El web conté milions i milions de pàgines distribuïdes en milions de webs, i per a cercar la informació que es
+				necessita en cada moment, principalment s'usen dues tècniques diferents;
+			</p>
+
+
+			<ul>
+				<li>
+					El cercador web, en el qual s'introdueixen una o diverses paraules clau (termes de cerca) en un
+					formulari i el cercador retorna les pàgines que hi coincideixen. Exemples en són Google o Yahoo!.
+					Hi ha cercadors específics per àrees temàtiques, d'altres que s'insereixen i busquen només en un lloc web concret. Els motors semàntics, en desenvolupament, actuen a partir de preguntes o frases
+					complexes i no únicament termes clau o etiquetes.
+				</li>
+				<li>
+					El directori web, que conté una llista de pàgines web, organitzades jeràrquicament per categories.
+					Un exemple n'és el Projecte de Directori Obert
+				</li>
+			</ul>		
+			
+		</section>
+
+		<section>
+			<h2 id="webstandarts">4. Estàndards Web</h2>
+
+			<p>
+				Alguns estàndards de la www són:
+			</p>
+
+			<ul>
+				<li>
+					<em>L'Identificador de Recurs Uniforme</em> <strong>(URI)</strong>, que és un sistema universal per a referenciar recursos a
+					la Web.
+				</li>
+				<li>
+					El <em>Protocol de Transferència d'Hipertext</em> <strong>(HTTP)</strong>, que especifica com es comuniquen el navegador i
+					el servidor entre ells.
+				</li>
+				<li>
+					El <em>Llenguatge de Marcat d'Hipertext</em> <strong>(HTML)</strong>, utilitzat per a definir l'estructura i contingut de documents
+					d'hipertext.
+				</li>
+				<li>
+					El <em>Llenguatge de Marcat Extensible</em> <strong>(XML)</strong>, utilitzat per a descriure l'estructura dels documents de
+					text.
+				</li>
+			</ul>
+
+			<p>
+				Berners Lee dirigeix des de 2007 el World Wide Web Consortium (W3C), el qual desenvolupa i manté
+				aquests i altres estàndards que permeten als ordinadors de la Web emmagatzemar i comunicar efectivament
+				diferents formes d'informació.
+			</p>
+		</section>
+		
+
+		<hr>
+	</main>
+	<!-- MAINFIN -->
+	
+	
+
+
+	<footer>
+		<p>
+			<em>Text extret de la Viquièdia </em>
+			<a href="https://ca.wikipedia.org/wiki/World_Wide_Web" target="_blank"><em>https://ca.wikipedia.org/wiki/World_Wide_Web</em></a>		
+		</p>
+
+		<a href="https://es.wikipedia.org/" target="_blank" ><img src="Wikipedia-logo.png" height="50" alt="Wikipedia Logo">Anar a la viquièdia</a>
+
+
+		<p>Pràctica realitzada per <strong>Badri Rusadze</strong> pel curs <em>“Confecció i publicació de pàgines web”</em> [15/04/2024]</p>
+	</footer>
+	
+</body>
+</html>
