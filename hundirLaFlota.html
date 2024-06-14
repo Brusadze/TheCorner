@@ -32,13 +32,21 @@
 			var missatge_intents = "";
 
 			
+			
 			/* f = fila, c = columna */
 			function dispara(f, c) {
 				var cell = document.getElementById(f + "-" + c);
 	            var missatge = "";
 
-				
+				/*
+				var rect = document.getElementById("misile").getBoundingClientRect();
+				console.log(rect.top, rect.right, rect.bottom, rect.left);
 
+				var rectCell = cell.getBoundingClientRect();
+				console.log(rectCell.top, rectCell.right, rectCell.bottom, rectCell.left);
+
+				*/
+				
 	            if (intents < 15) {
 	            	if (riu[f][c] == 1) {
 						////////////////
@@ -54,27 +62,30 @@
 			            cell.style.backgroundRepeat = "no-repeat";
 			            intents++;
 			            if (intents == 15) {
-			            	alert("ÚLTIM INTENT!");
+			            	//alert("ÚLTIM INTENT!");
+							document.getElementById("taula_contingut").style.backgroundColor = "red";
+
 			            }
 			            
 		                if(tocats == 10){
 		                    missatge = "Has guanyat, has enfonsat 10 vaixells";
-		                    alert("HAS GUANYAT!");
+		                    //alert("HAS GUANYAT!");
 		                    window.location.reload();
 		                }
 		            } else {    
 			            missatge = "Aigua!";
-			            cell.style.backgroundColor = "blue";
+			            cell.style.border = "5px solid green";
 			            intents++;
 			            if (intents == 15) {
-			            	alert("ÚLTIM INTENT!");
+			            	//alert("ÚLTIM INTENT!");
+							document.getElementById("taula_contingut").style.backgroundColor = "red";
 			            }
 		            }
 		            console.log(intents);
 		            document.getElementById("resultat").innerHTML = missatge;
 		            document.getElementById("intents").innerHTML = "Ho has intentat " + intents + " vegades.";
 				} else {
-					alert("HAS PERDUT!");
+					//alert("HAS PERDUT!");
 					window.location.reload();
 				}
 			}
@@ -94,6 +105,7 @@
 			#flexdiv{
 				display: flex;
 				width: max-content;
+				text-align: center;
 			}
 			.primer{
 				display: flex;
@@ -111,9 +123,9 @@
 				margin-left: 300px;
 				margin-top: 150px;
 				position: absolute;
+				left: 5px;
 				
 			}
-			
 			
 		
             td {
