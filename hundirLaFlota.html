@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Enfonsar la flota</title>
+		 
+		<script type="text/javascript">
+			var riu = [
+				[1, 0, 1, 1, 1],
+				[1, 0, 0, 0, 0],
+				[1, 0, 0, 0, 1],
+				[1, 0, 0, 0, 1],
+				[0, 0, 0, 0, 1]
+			];
+			var algo = 0;
+
+			for(var i=0; i < riu.length; i++){
+                for(j = 0; j < riu[i].length; j++){
+                    riu[i][j] = Math.round(Math.random());
+                    	if(riu[i][j] == 1){
+                    		algo++;
+                    		if(algo > 10){
+                    			riu[i][j] = 0;
+                    		}
+                    	}
+                }console.log(algo);
+            }
+			 console.log(riu);
+			var tocats = 0;
+			var intents = 0;
+			var missatge_intents = "";
+
+			
+			/* f = fila, c = columna */
+			function dispara(f, c) {
+				var cell = document.getElementById(f + "-" + c);
+	            var missatge = "";
+
+				
+
+	            if (intents < 15) {
+	            	if (riu[f][c] == 1) {
+						////////////////
+
+
+
+						////////////
+			            missatge = "Boom!";
+			            tocats++;
+			            cell.style.backgroundColor = "red";
+			            cell.style.backgroundImage =  "url(https://i.ibb.co/DpXQ6Q8/barco.png)";
+			            cell.style.backgroundSize = "cover";
+			            cell.style.backgroundRepeat = "no-repeat";
+			            intents++;
+			            if (intents == 15) {
+			            	alert("ÚLTIM INTENT!");
+			            }
+			            
+		                if(tocats == 10){
+		                    missatge = "Has guanyat, has enfonsat 10 vaixells";
+		                    alert("HAS GUANYAT!");
+		                    window.location.reload();
+		                }
+		            } else {    
+			            missatge = "Aigua!";
+			            cell.style.backgroundColor = "blue";
+			            intents++;
+			            if (intents == 15) {
+			            	alert("ÚLTIM INTENT!");
+			            }
+		            }
+		            console.log(intents);
+		            document.getElementById("resultat").innerHTML = missatge;
+		            document.getElementById("intents").innerHTML = "Ho has intentat " + intents + " vegades.";
+				} else {
+					alert("HAS PERDUT!");
+					window.location.reload();
+				}
+			}
+
+			function taula() {
+				for (var i = 0; i < riu.length; i++) {
+					document.getElementById("taula_contingut").innerHTML += "<tr id='id" + i + "' style='padding=30px;'>";
+					for (var a = 0; a < riu[i].length; a++) {
+						document.getElementById("id" + i).innerHTML += "<td id='" + i + "-" + a + "' onclick='dispara(" + i + ", " + a + ")'></td>";
+					}
+					document.getElementById("taula_contingut").innerHTML += "</tr>";
+				}
+			}
+		</script>
+		 
+		<style type="text/css">
+			#flexdiv{
+				display: flex;
+				width: max-content;
+			}
+			.primer{
+				display: flex;
+				margin-top: 90px;
+				width: 500px;
+				background-image: url(https://png.pngtree.com/png-vector/20230906/ourmid/pngtree-battleship-with-big-guns-png-image_9992416.png);
+				background-repeat: no-repeat;
+			}
+			.primer div{
+				width: 150px;
+				height: 150px;
+				background-image: url(https://pngimg.com/d/nuclear_bomb_PNG27.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				margin-left: 300px;
+				margin-top: 150px;
+				position: absolute;
+				
+			}
+			
+			
+		
+            td {
+	            padding: 40px;
+	            text-align: center;
+	            cursor: pointer;
+	            background-image: url(https://www.textures4photoshop.com/tex/thumbs/water-pool-texture-seamless-and-free-thumb36.jpg);
+            }
+            .red {
+            	background-color: red;
+            }
+            .blue {
+            	background-color: blue;
+            }
+        </style>
+	</head>
+	<body onload="taula()">
+		<div id="flexdiv">
+			<div class="primer">
+				<div id="misile">
+
+				</div>
+			</div>
+			<div>
+				<h1>Enfonsar la flota</h1>
+				<div id="resultat"></div>
+				<div id="intents"></div>
+				
+				<table id="taula_contingut" border="1">
+			
+				</table>
+			</div>
+		</div>
+		
+	</body>
+</html>
