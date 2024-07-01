@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+	<meta charset="UTF-8">
+	<title>Estat cursos nous</title>
+	<style type="text/css">
+		.vermell{
+			color: #e60000;
+		}
+		.verd{
+			color: #00cc00;
+		}
+		.blau{
+			color: #006666;
+		}
+	</style>
+</head>
+<body>
+	<img src="LogosSOC.png" id="logos">
+	<script type="text/javascript">
+		document.getElementById("logos").style.width = "100%";
+	</script>
+	<h1>Detall dels alumnes inscrits als cursos</h1>
+	<p>Els cursos tenen una capacitat màxima de 15 persones.<br> 
+	(<em>En els cursos complets es poden apuntar alumnes a la llista d'espera per si algun dels alumnes falla.</em>)</p>
+	
+	<div id="llistat_cursos">
+
+	</div>
+	
+	<br>
+	<input type="number" name="numalu" id="numalu" placeholder="Núm. alumnes nou curs">
+	<button onclick="nouCurs()">Afegir alumnes nou curs</button>
+
+	<br>
+	<hr>
+	<div>Pràctica realitzada per <strong>Badri Rusadze</strong> pel curs de <em>Confecció i publicació de pagines web</em> [12/06/2024]</div>
+
+	<script type="text/javascript">
+
+		var alumnosEnCurso = [0,8,3,17,0,15,4,11,18];
+		
+		//console.log(alumnosEnCurso);
+		for(i = 0; i < 9; i++){
+			//console.log(alumnosEnCurso[i]);
+			if(alumnosEnCurso[i] == 0){
+				missatge = "Curs ref. (" + i + "): " + "<strong><span class='vermell'>" + alumnosEnCurso[i] + " </span></strong> alumnes inscrits <br>";
+			}else if(alumnosEnCurso[i] <= 15){
+				missatge = "Curs ref. (" + i + "): " + "<strong><span class='verd'>" + alumnosEnCurso[i] + " </span></strong> alumnes inscrits <br>";
+			}else{
+				missatge = "Curs ref. (" + i + "): " + "<strong><span class='blau'>" + alumnosEnCurso[i] + " </span></strong> alumnes inscrits (" + (alumnosEnCurso[i]-15) +  ") en llista d'espera <br>";
+			}
+
+			document.getElementById("llistat_cursos").innerHTML = document.getElementById("llistat_cursos").innerHTML + missatge;
+		}
+		
+		var estudiantes = 0;
+		function nouCurs(){
+			estudiantes = document.getElementById("numalu").value;
+			//console.log(estudiantes);
+			alumnosEnCurso.push(estudiantes);
+			if(estudiantes <= 15 && estudiantes > 0){
+				missatge = "Curs ref. (" + (alumnosEnCurso.length-1) + "): " + "<strong><span class='verd'>" + estudiantes + " </span></strong> alumnes inscrits <br>"; 
+			}else if(estudiantes > 15){
+				missatge = "Curs ref. (" + (alumnosEnCurso.length-1) + "): " + "<strong><span class='blau'>" + estudiantes + " </span></strong> alumnes inscrits (" + (estudiantes-15) +  ") en llista d'espera <br>";
+			}else if(estudiantes == 0){
+				missatge = "Curs ref. (" + (alumnosEnCurso.length-1) + "): " + "<strong><span class='vermell'>" + estudiantes + " </span></strong> alumnes inscrits <br>";
+			}
+			document.getElementById("llistat_cursos").innerHTML = document.getElementById("llistat_cursos").innerHTML + missatge;	
+
+		}
+
+	</script>
+
+</body>
+</html>

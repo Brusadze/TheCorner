@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Btc</title>
+
+    <style type="text/css">
+        #texto{
+            font-family: Verdana;
+            font-size: 22px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1 id="texto">Precio del BITCOIN en tiempo real : <span id="btcPrice"></span></h1>
+
+    
+    <script type="text/javascript">
+
+        setInterval(Get, 3000);
+
+        function Get(){
+            var Httpreq = new XMLHttpRequest(); // a new request
+            Httpreq.open("GET","https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT",false);
+            Httpreq.send(null);
+            console.log(Httpreq.responseText);      
+            
+            const obj = JSON.parse(Httpreq.responseText);
+            console.log(obj.price);
+            
+            if(document.getElementById("btcPrice").innerHTML > obj.price){
+                document.getElementById("btcPrice").style.color = "red";
+            }else{
+                document.getElementById("btcPrice").style.color = "green";
+            }
+
+            document.getElementById("btcPrice").innerHTML = obj.price;
+
+            setTimeout(Get, 60000);  
+        } 
+        
+    </script>
+
+
+</body>
+</html>
