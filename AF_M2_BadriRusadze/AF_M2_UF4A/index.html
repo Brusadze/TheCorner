@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobador De Plantas Toxicas</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function onHover()
+            {
+                document.getElementById("menuImg").style.width = "800px";
+            }
+
+            function offHover()
+            {
+                document.getElementById("menuImg").style.width = "400px";
+            }
+    </script>
+
+    <img id="menuImg" src="LogosSOC.png" alt="Logo Del Soc" width="400px" onmouseover="onHover();" 
+    onmouseout="offHover();"/>
+
+    <h1>Comprueba Aqui las plantas introduciendo nombres de las plantas</h1>
+
+    <input type="text" name="plantas" id="_nomDePlanta">
+    <button type="button" onclick="checkForToxic();">Comprobar!</button>
+
+    <div id="_listaDePlantas">
+
+    </div>
+
+    <p>
+        Pràctica realitzada per Badri Rusadze pel curs “Confecció i publicació de pàgines web” [01/07/2024]
+    </p>
+
+    <script type="text/javascript">
+        var plantasArray = new Array();
+        
+        plantasArray[0] = "menta";
+        plantasArray[1] = "valeriana";
+        plantasArray[2] = "cicuta";
+        plantasArray[3] = "belladona";
+
+        var _numering = 0;
+        var _message = "";
+        //console.log(plantasArray);
+
+        function checkForToxic(){
+            
+            //console.log("im here");
+            if(document.getElementById("_nomDePlanta").value == "menta" || document.getElementById("_nomDePlanta").value == "valeriana"){
+                console.log("MEDICINALES");
+                _numering++;
+                _message = _numering + ". <strong><font color='green'>" + document.getElementById("_nomDePlanta").value + "</font></strong><br>";
+            }else if(document.getElementById("_nomDePlanta").value == "cicuta" || document.getElementById("_nomDePlanta").value == "belladona"){
+                console.log("TOXICAS");
+                _numering++;
+                _message = _numering + ". <strong><font color='red'>" + document.getElementById("_nomDePlanta").value + "</font></strong><br>";
+            }else{
+                _numering++;
+                _message = _numering + ". " + document.getElementById("_nomDePlanta").value + "<br>";
+            }
+            document.getElementById("_listaDePlantas").innerHTML += _message;
+        }
+    </script>
+</body>
+</html>
