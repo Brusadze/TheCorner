@@ -1,0 +1,114 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego BOOOOOM!</title>
+    <style type="text/css">
+        body{
+            margin: 0px;
+            padding: 0px;
+            background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?cs=srgb&dl=pexels-philippedonn-1169754.jpg&fm=jpg");
+            background-size: cover;
+        }
+        header{
+            display: flex;
+            height: 60px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.503);
+            justify-content: end;
+        }
+        #puntos{
+            color: white;
+            font-size: 18px;
+            padding-right: 25px;
+        }
+        main div{
+            position: absolute;
+            left: 45%;
+            top: 20%;
+        }
+        #rotated{
+            display: none;
+            transform: rotate(180deg);
+            position: absolute;
+            bottom: -80px;
+        }
+       
+        footer{
+            position: absolute;
+            bottom: 0;
+            height: 70px;
+            width: 100%;
+            background-color: rgba(128, 128, 128, 0.545);
+        }
+
+        .classname {
+            -webkit-animation-name: animatedBackground;
+            -webkit-animation-duration: 30s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+
+        @keyframes animatedBackground {
+        from {
+            background-position: 0 0;
+        }
+        /*use negative width if you want it to flow right to left else and positive for left to right*/
+        to {
+            background-position: 0 10000px;
+        }
+        }
+    </style>
+</head>
+<body id="bodyId">
+    
+    <header>
+        <p id="puntos">Puntos</p>
+    </header>
+
+    <main>
+        <div>
+            <img src="https://img.pikbest.com/origin/09/19/80/79epIkbEsTj38.png!sw800" alt="rocket" height="400px">
+        </div>
+        <div id="rotated">
+            <img src="https://www.icegif.com/wp-content/uploads/2022/09/icegif-1612.gif" alt="rocket" height="400px">
+        </div>
+    </main>
+
+    <footer>
+        <input type="number" id="number" placeholder="introduce tu apuesta">
+        <button onclick="startTimer()">Apostar</button>
+        <button onclick="stopTimer()">Cerrar apuesta!</button>
+    </footer>
+
+    <script type="text/javascript">
+        var seconds = 0;
+        var points = 0;
+        var myInterval;
+        var randomStopTime;
+
+        function startTimer() {   
+            document.getElementById('bodyId').className = 'classname';        
+            document.getElementById('rotated').style.display = 'block';       
+            myInterval = setInterval(myTimer, 1000);
+
+            randomStopTime = Math.floor(Math.random() * 50) + 1;
+            console.log(randomStopTime);
+            setTimeout(stopTimer, randomStopTime * 1000);
+        }
+        
+        function myTimer() {
+           seconds++;
+           points = document.getElementById("number").value * seconds;
+           document.getElementById("puntos").innerHTML = seconds + "x" + " total de puntos " + points + " EUR";
+        }
+
+        function stopTimer() {
+          clearInterval(myInterval);
+          document.getElementById('bodyId').classList.remove('classname');      
+          document.getElementById('rotated').style.display = 'none'; 
+        }
+    </script>
+    
+</body>
+</html>
